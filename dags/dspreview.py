@@ -18,6 +18,6 @@ dag_args = {
 dag = DAG('dspreview', default_args=dag_args,
           schedule_interval=timedelta(minutes=1), dagrun_timeout=timedelta(minutes=3))
 
-run_dcm_task = BashOperator(task_id='run_dcm',
+run_dcm_task = BashOperator(task_id='update_dspreview',
                bash_command='/home/airflow/worker/update.sh',
                dag=dag)
